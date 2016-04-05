@@ -1,0 +1,70 @@
+{
+  "name": "Customer",
+  "plural" : "Customers",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },  
+  "properties": {
+    "id": {
+      "type": "number",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "firstName": {
+      "type": "string",
+      "required": true,
+      "mysql": {
+        "columnName": "first_name"
+      }
+    },
+    "secondName": {
+      "type": "string",
+      "required": false,
+      "mysql": {
+        "columnName": "second_name"
+      }
+    },
+    "alias": {
+      "type": "string",
+      "required": false
+    },
+    "mobilePhone": {
+      "type": "string",
+      "required": false,
+      "mysql": {
+        "columnName": "mobile_phone"
+      }
+    },
+    "dni": {
+      "type": "string",
+      "required": false
+    },
+    "email": {
+      "type": "string",
+      "required": false
+    },
+    "createdAt": {
+      "type": "date",
+      "dataType": "timestamp",
+      "mysql": {
+        "columnName": "created_at"
+      }
+    },
+    "updatedAt": {
+      "type": "date",
+      "dataType": "timestamp",
+      "mysql": {
+        "columnName": "updated_at"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

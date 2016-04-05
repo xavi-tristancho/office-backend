@@ -1,0 +1,81 @@
+{
+  "name": "Article",
+  "plural": "Articles",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "reference": {
+      "type": "string"
+    },
+    "purchasePrice": {
+      "type": "number",
+      "dataType": "decimal",
+      "precision": 10,
+      "scale": 2,
+      "mysql": {
+        "columnName": "purchase_price"
+      }
+    },
+    "costPrice": {
+      "type": "number",
+      "dataType": "decimal",
+      "precision": 10,
+      "scale": 2,
+      "mysql": {
+        "columnName": "cost_price"
+      }
+    },
+    "sellPrice": {
+      "type": "number",
+      "dataType": "decimal",
+      "precision": 10,
+      "scale": 2,
+      "mysql": {
+        "columnName": "sell_price"
+      }
+    },
+    "quantity": {
+      "type": "number"
+    },
+    "createdAt": {
+      "type": "date",
+      "dataType": "timestamp",
+      "mysql": {
+        "columnName": "created_at"
+      }
+    },
+    "updatedAt": {
+      "type": "date",
+      "dataType": "timestamp",
+      "mysql": {
+        "columnName": "updated_at"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "provider": {
+      "type": "belongsTo",
+      "model": "Provider",
+      "foreignKey": "provider_id"
+    },
+    "family": {
+      "type": "belongsTo",
+      "model": "Family",
+      "foreignKey": "family_id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
